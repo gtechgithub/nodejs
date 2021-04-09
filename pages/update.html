@@ -1,0 +1,126 @@
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+<script type="text/javascript" src="./node_modules/jquery/dist/jquery.slim.min.js"></script>
+<script type="text/javascript" src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<body>
+    </br>
+    </br>
+
+
+    <form action="/getupdatedetails" method="POST">
+
+        <div class="container font-weight-bold">
+            <div class="form-row">
+
+                <div class="form-group col-sm-2">
+
+                    <label for="track_id">Track id:</label>
+                    <input type="text" class="form-control" id="track_id" name="track_id"
+                        onclick="updatedetailsenter()"  value="<%= track_id %>">
+                    </input>
+                </div>
+
+
+
+
+            </div>
+            <button class="btn btn-primary btn-xs invisible" id="updatedetailssubmit">Submit</button>
+        </div>
+
+    </form>
+
+    <form action="/updatesubmit" method="POST">
+
+        <div class="container">
+
+            <div class="form-row">
+
+                <div class="form-group col-sm-2">
+
+                    <label for="local_settle_account">Local settle account:</label>
+                    <input type="text" class="form-control" id="local_settlement_account"
+                        name="local_settlement_account" value="<%= model.local_settlement_account %>">
+                    </input>
+                </div>
+
+                <div class="form-group col-sm-2">
+                    <label for="local_cash_account">Local Cash Account:</label>
+                    <input type="text" class="form-control" id="local_cash_account" name="local_cash_account"
+                        value="<%= model.local_cash_account %>">
+                    </input>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-sm-2">
+                    <label for="rec_amount">Rec Amount:</label>
+                    <input class="form-control" type="text" id="rec_amount" name="rec_amount"
+                        value="<%= model.rec_amount %>">
+
+                    </input>
+                </div>
+                <div class="form-group col-sm-2">
+                    <label for="pay_amount">Pay Amount:</label>
+                    <input class="form-control" type="text" id="pay_amount" name="pay_amount"
+                        value="<%= model.pay_amount %>">
+
+                    </input>
+                </div>
+
+                <div class="form-group col-sm-2">
+                    <label for="net_amount">Net Amount:</label>
+                    <input class="form-control" type="text" id="net_amount" name="net_amount"
+                        value="<%= model.net_amount %>">
+
+                    </input>
+                </div>
+
+            </div>
+            <div class="form-row">
+
+                <div class="form-group  col-sm-4">
+
+                    <label for="sec_trans">Security Transaction:</label>
+                    <input type="text" class="form-control" id="security_trans" name="security_trans"
+                        value="<%= model.security_trans %>">
+                    </input>
+                </div>
+            </div>
+            <div class="form-row">
+
+                <div class="form-group  col-sm-2">
+                    <label for="status"> Status: </label>
+                    <input type=" text" class="form-control" id="status" name="status"
+                        value="<%= model.status %>">
+                    </input>
+                </div>
+            </div>
+            <div class="form-row">
+
+                <div class="form-group  col-sm-2">
+                    <label for="rms_code"> Rms Code: </label>
+                    <input type="text" class="form-control" id="rms_code" name="rms_code"
+                        value="<%= model.rms_code %>">
+                    </input>
+                </div>
+            </div>
+
+            </br>
+            <button class="btn btn-primary btn-sm">Submit</button>
+        </div>
+
+
+    </form>
+
+</body>

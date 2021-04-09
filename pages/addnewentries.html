@@ -1,0 +1,48 @@
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+<script type="text/javascript" src="./node_modules/jquery/dist/jquery.slim.min.js"></script>
+<script type="text/javascript" src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="./script/jaddnewentries.js"> </script>
+
+<br />
+
+<body>
+
+    <div class="container">
+
+        <button class="btn btn-primary" onclick="bulkEntriesClick()">Input Click</button>
+
+        <button class="btn btn-primary" onclick="toSave()">Save</button>
+
+
+        <p><br>
+
+
+        <div class="input-group">
+            <textarea class="form-control" id="bulkentries" aria-label="Bulk Entries"></textarea>
+        </div>
+
+        <br/>
+        <div class="text-center p-3 mb-2 bg-primary text-white">
+                BULK ENTREIES TO BE SAVED
+        </div>
+
+        <table id="table1" class="table table-responsive table-hover table-striped table-bordered" cellspacing="0"
+            width="50%">
+            <tbody id="table1body">
+
+
+
+        </table>
+        </table>
+    </div>
+
+</body>

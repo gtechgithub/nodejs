@@ -1,0 +1,164 @@
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/tablescrollheader.css" />
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link type="text/css" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+<!--
+<link rel="stylesheet" type="text/css" src="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="./script/jretrieve.js"> </script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+<script type="text/javascript" src="./node_modules/jquery/dist/jquery.slim.min.js"></script>
+<script type="text/javascript" src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+<body>
+    <div class="container">
+        </br>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <input type="text" class="form-control" placeholder="Settle A/c" id="SettleInput">
+            </div>
+
+            <div class="col-sm-3">
+                <input type="text" class="form-control" placeholder="Cash A/c" id="CashInput">
+            </div>
+
+
+            <div class="col-sm-3">
+                <input type="text" class="form-control" placeholder="Value Date" id="ValidInput">
+            </div>
+
+            <div class="col-sm-3">
+
+                <button class="btn btn-primary">Submit</button>
+
+            </div>
+
+        </div>
+        </br>
+
+
+
+
+        <div class="row">
+
+            <div class="col-sm-6">
+                <input type="text" onkeyup="filterid1onchange()" class="form-control col-sm-4"
+                    placeholder="Common Filter" id="filterid1">
+            </div>
+
+            <dialog id="dialogWindow">
+                <form method="dialog">
+                    <input type="text" id="dailogtextbox1">
+                    <button type="submit">SUBMIT</button>
+                </form>
+
+            </dialog>
+        </div>
+
+
+        </br>
+
+
+        <!-- <table class="table table-bordered"> -->
+        <table id="table1"
+            class="table table-striped table-bordered tableFixHead table-wrapper-scroll-y my-custom-scrollbar"
+            cellspacing="0" width="100%">
+
+
+            <thead>
+
+                <tr class="bg-primary">
+                    <th>No</th>
+                    <th> Save</th>
+                    <th> Del</th>
+
+                    <th>Local settle A/C</th>
+                    <th>Local cash A/C</th>
+                    <th>Rec amount</th>
+                    <th>Pay amount</th>
+                    <th>Net amount</th>
+                    <th>Sec trans</th>
+                    <th>Status</th>
+                    <th>Rms code</th>
+
+                </tr>
+            </thead>
+
+            <% if(datas.length!=0){ var i=1; datas.forEach(function(data){ %>
+                </tbody>
+
+                <tr>
+                    <td>
+                        <%=i; %>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" id="buttonedit" onclick="saveclick('1','sa1')">
+                            <i class="bi-save"></i></button>
+
+                    <td>
+
+                        <button class="btn btn-danger" id="buttondelete"><i class="bi-trash"></i></button>
+
+                    </td>
+                    <td>
+                        <input type="text" size="10" value="<%=data.local_settlement_account %>"> </input>
+                    </td>
+                    <td>
+                        <input type="text" size="10" value="<%=data.local_cash_account %>"> </input>
+
+                    </td>
+                    <td>
+                        <input type="text" size="10" value="<%=data.rec_amount %>"> </input>
+
+                    </td>
+                    <td>
+                        <input type="text" size="10" value="<%=data.pay_amount %>"> </input>
+
+                    </td>
+                    <td>
+                        <input type="text" size="10" value="<%=data.net_amount %>"> </input>
+
+                    </td>
+                    <td>
+                        <input type="text" size="10" value="<%=data.security_trans %>"> </input>
+
+                    </td>
+                    <td>
+                        <input type="text" size="10" value="<%=data.status %>"> </input>
+
+                    </td>
+                    <td>
+                        <input type="text" size="10" value="<%=data.rms_code %>"> </input>
+
+                    </td>
+
+                </tr>
+                <% i++; }) %>
+                    <% } else{ %>
+                        <tr>
+                            <td colspan="7">No Data Found</td>
+                        </tr>
+                        <% } %>
+                            </tbody>
+
+        </table>
+    </div>
+
+</body>
